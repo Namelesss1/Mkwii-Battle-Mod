@@ -1,7 +1,14 @@
 The code for this project.
 These files are placed within /bad1/mod/ folder in Bean's CT-code engine.
 
-#NOTE: 
+#NOTE 1:
+All memory address so far are NTSC-U. This has not yet been ported to other regions!
+
+#NOTE 2:
+Beginner asm coder, so some code is not optimized FOR SURE and can be ugly.
+Also, I need to update documentation and get some better comments going.
+
+#NOTE 3: 
 These are not the only files used in the project. The following files created by
 Bean and Chadderz are used as well:
 
