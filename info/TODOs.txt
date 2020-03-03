@@ -1,0 +1,29 @@
+- Continue to fix code up to make it neater, as always. It can always be improved.
+
+- Add code that causes WWs to randomly load custom gamemodes ("The next battle is Bob-omb blast! The next battle is FFA, No Mercy!, The
+Next Battle is A Normal Balloon Battle!). These gamemodes should "sync" for each player (i.e. If its bob-omb blast, all players should
+be in bob-omb blast mode.)
+
+- WWs: Even number of players are team mode. Odd numbers are FFA.
+
+- Add rotating triple bananas back in.
+
+- Add the war-mode option in Riivolution. It will only contain the froom team ordering feature. And possibly any other feature that
+  could help with competative events. 
+
+-------BUGS & CHANGES NEEDED-------
+
+- Strange softlock when swapping a character that makes you unable to move. Might be caused when the timer forces you to close out..
+
+- Fix course vote names (They work in "VS" mode, perhaps something to do with track names into memory?)
+
+- Look into & Fix any possible bug in choosing random online?
+
+- Make the Lightning cup (Character Swap Cup) Unpickable by random. Maybe in Random.mod from Bean & Chadderz's code.
+
+- Coin Runners only lasts for one battle before switching back to balloons in FFA mode. Perhaps store the gamemode to memory upon
+  starting froom, and referring to that mem location to determine gamemode?
+
+- After that, make sure to improve the fix to teammate pt count in FFA.
+
+- Add support for 2-player modes in FFA. 

@@ -1,0 +1,25 @@
+Credits regarding codes run by this project.
+
+
+Davidevgen - Item Limiters [Used in bob-omb blast, fibbed modes]
+
+MrBean35000vr - Change Characters Between WiFi Races Code 
+I modified this code to work for battles - changing vehicles in-between battles. I also Use it to load
+certain screens into memory that may not be present at times. Bean's code is EXTREMELY useful.
+, also the CT-CODE engine this project runs on.
+
+Chadderz - CT-Code engine.
+
+Geeh - Hit your teammates in battle mode. I happened to accidentally stumble across how to do this on my own afterward,
+but still deserves credit as I've used the code before I learned how to manipulate it on my own.
+
+Zak (Vega) 
+- Very useful tutorials on Assembly and Manipulating mkwii's code, main reason I've been able to do
+any of these mods at all. Without his resources, none of this would have been accomplished by me (Or would take 200x as 
+long)
+
+- A memory address used in his "Equal Probability Code" is used in the Bob-omb blast & fibs mode. (It happens to be the address
+that reads from ItemSlot.bin and stores each probability!)
+
+- His "Stacked Teams" battle/Team VS code is used & slightly modified in this project to make froom teams predictable:
+Teams are now based on the order in which players join a froom! 

@@ -1,0 +1,40 @@
+####################
+# MEMORY ADDRESSES #
+####################
+0x80002300: Holds a value which determines item mode.
+ -5f : Bob-omb blast
+ -5e : Fibbed
+ -5d (Or any other val) : Default
+
+0x800022FC: Holds a value which determines team and course orientation
+ -5c : Team + Mirror
+ -5b (Or else): Default (Team + Normal)
+ -5a : FFA Mirror
+ -59 : FFA
+
+0x800022F8: Holds a value which determines gametype
+ -58 : No mercy
+ -57 : Default/Normal
+
+0x800022F4: Holds a value which determines battle tracks
+ -56 : Regular, default battle tracks.
+ -55 : Battle CTs Pack 1
+ -54 : Capture the coin maps
+ -53 : Battle CTs Pack 2 (To be added later, once more decent CTs for battle are found.)
+ 
+ 0x800022F0: Contains most recent cup highlighted.
+ -0 : Wii Cup
+ -1 : Retro Cup
+ 
+ 0x800022EC: Keeps track of most recent screen loaded.
+ - 0xCA: Load Character Select.
+ - Otherwise, the value here is based on the previous screen that's been loaded.
+
+0x800022E8: Whether to order battle teams based on room order or not. 
+- 0 : No
+- 1 : Yes
+
+0x800022E4: Whether player is in frooms, or WWs.
+- 0 : WW
+- 1 : Froom (Balloon Battle)
+- 2 : Froom (Coin Runners)
