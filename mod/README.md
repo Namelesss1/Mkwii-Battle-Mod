@@ -1,13 +1,13 @@
 These files are placed within /bad1/mod/ folder in Bean's CT-code engine.
 
-# NOTE: 
+#NOTE: 
 These are not the only files used in the project. The following files created by
 Bean and Chadderz are used as well:
 
 mod2.mod
-menu.mod
+menu.mod (I modified this one?)
 random.mod
-track_redirect.mod
+track_redirect.mod (I modified this one as well I believe?)
 filter.mod
 bmg.mod
 
