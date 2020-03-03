@@ -2,7 +2,10 @@
 * General.mod by Noname
 * Just some general gameplay modifications.
 *
-* Code contributors: Zakmkw / Vega [Stacked teams code]
+* Note: This file should also contain a modified version of 
+* Zakmkw / Vega's "Stacked Teams code." However, since it is not
+* my work and I barely modified the code much, it is omitted from this
+* file. It can be found at https://mkwii.com/archive/index.php?thread-1148.html
 ***************************************************/
 
 
@@ -16,9 +19,10 @@
  * BINARY(BITS): 0011 0011 00011 0011 0011 0011
  * HEX:           3    3    3     3    3     3
  *
- * 
- * NOTE!! This code was created by Zakmkw / Vega. So all credit for this one goes to him (including the documentation / comments below for this method.)
- * I only modified the code to fit with the project, and to change the froom teams based on how I saw fit. */
+ * ***************************************************************
+ * As stated at the beginning of the file, this code was not created (or heavily modified)
+ * by me, so the enableCustomTeams method is not shown.
+ *****************************************************************/
 MOD_REL (
 	mod_teams,
 	TeamManipulatorAddr,
@@ -53,6 +57,7 @@ MOD_DOL(
 	mod_general,
 	0x80002700,
 	
+	/* Player loses 2 points on death in balloon battle after losing all balloons. */
 	.globl setPtLoss;
 	setPtLoss:
 	
@@ -60,54 +65,6 @@ MOD_DOL(
 	ori		r3, r3, 0xFFFE; /*Lose 2 points when dying.*/
 	blr;
 	
-	
-	
-	/* As mentioned above, the enableCustomTeams method below is created by zakmkw / Vega. It's only modified to fit the project,
-	 * and to make teams based on a specific order that differes from the original code. */
-	 
-	 /*
-	 *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
-	*                  Notes for Team Bits                 *
-	* Bits 0 thru 7 are reserved, not used for Team Bits   *
-	*           A bit flips from 0 to 1 if Red Team        * 
-	*           Bit 31 = HOST aka slot 0, non guest        *
-	*                  Bit 30 = Guest of HOST              *
-	*            Bit 29 = Player slot 1, non guest         *
-	*              Bit 28 = Player slot 1, guest           *
-	*           Bit 27 = Player slot 2, non guest          *
-	*              Bit 26 = Player slot 2, guest           *
-	*                      etc etc etc                     *
-	*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-	
-	.globl enableCustomTeams;
-	enableCustomTeams:
-	
-	lis   r12, BattleTeamAddr@ha;
-	lwz	  r11, BattleTeamAddr@l(r12);
-	cmpwi r11, 0;
-	beq   original;
-
-
-	clrrwi r0, r0, 24; /*Clear out all the team bits of the compiled word*/
-
-	li r12, 0x1; /*1 simply used to allow compilation, set this to what you want*/
-
-	cmpwi r12, 0x0;
-	bne+ red_team;
-
-	li r12, 0x0004; /*Set bits so you+everyone is on blue team except player slot 1 non-guest*/
-	b the_end;
-
-	red_team:
-	lis r12, 0x0033;
-	ori r12, r12, 0x3333; /*Set bits so you+everyone is on red team except player slot 1 non-guest*/
-
-	the_end:
-	or r0, r12, r0;  /*Add finalized bits to compiled word*/
-
-	original:
-	stw r0, 0x002C (r31); /*Default Instruction*/
-	blr;
 )
 	
 	
@@ -121,9 +78,9 @@ MOD_REL(
 	
 	
 	lis 	r12, 0x8000;
-	lwz		r0, 0 (r4); /* Original */
+	lwz	r0, 0 (r4); /* Original */
 	cmpwi	r0, 0x62; /* Battle Froom */
-	beq		forBB;
+	beq	forBB;
 	cmpwi   r0, 0x63; /*Coin Battle Froom */
 	beq     forCR;
 	b		compare_WW;
@@ -153,30 +110,27 @@ MOD_REL(
 	.globl fixTrackNamesBack;
 	fixTrackNamesBack:
 	
-	mr		r12, r3;
-	lwz		r3, 0 (r3);
+	mr	r12, r3;
+	lwz	r3, 0 (r3);
 	cmpwi	r3, 0x60; /* VS Froom */
-	bne		determineWW;
+	bne	determineWW;
 	
 	lis     r11, 0x8000;
-	lwz		r11, 0x22D4(r11);
+	lwz	r11, 0x22D4(r11);
 	cmpwi   r11, 1;
-	bne		0x0c;
-	li		r3, 0x63; /*CR BT Froom */
-	b		store_BTvote;
-	li		r3, 0x62; /* Load BT Froom */
-	b		store_BTvote;
+	bne	0x0c;
+	li	r3, 0x63; /*CR BT Froom */
+	b	store_BTvote;
+	li	r3, 0x62; /* Load BT Froom */
+	b	store_BTvote;
 	
 	determineWW:
 	cmpwi	r3, 0x58; /* VS WW Voting */
 	bne     0x08;
-	li		r3, 0x59; /* Load BT ww voting */
+	li	r3, 0x59; /* Load BT ww voting */
 	
 	store_BTvote:
-	stw		r3, 0(r12);
-	b		VoteNameFixAddr2 + 0x04;
+	stw	r3, 0(r12);
+	b	VoteNameFixAddr2 + 0x04;
 	
 )
-
-
-/* If the r4 read stuff isn't working 100%, perhaps the r31 can be used to fix timer stuff.! (Or vise versa?)*/
