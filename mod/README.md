@@ -1,6 +1,6 @@
 These files are placed within /bad1/mod/ folder in Bean's CT-code engine.
 
-#NOTE: 
+# NOTE: 
 These are not the only files used in the project. The following files created by
 Bean and Chadderz are used as well:
 
