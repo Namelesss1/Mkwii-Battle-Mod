@@ -9,15 +9,12 @@
 * CURRENT ITEM MODES:
 * (1) Bob-omb blast [Bombs only!]
 * (2) Snipemode [Fibs, triple bananas] soon to be updated to include more.
-* (Soon - 3) "Equal Items" mode - All items have an equal chance of being pulled for all
-* players, no matter your current standing.
 * 
 *
 * Code contributors: 
 * - Davidevgen [Item Limiters code] used to increase item limits in game.
 * - Zakmkw / Vega [Equal Item probability code] I used an address from his code to modify the
 * probabilities of items. This so happens to be the address that reads from ItemSlot.bin!!!
-* If I decide to add the "Equal Items" gamemode, it will use his code as well.
 ***********************************************************/
 
 
@@ -114,7 +111,7 @@ MOD_DOL(
 
 	/*r11 = item id; r12 = Max Chance; r5 = calculated chance of current item. */
 
-	/*NOTE: consider math w/ negative numbers for less code lines!*/
+	/*NOTE: consider using negative numbers for less code lines!*/
 	determineProbabilities:
 	li	r12, MAX_CHANCE;
 	cmpw	r17, r11; /*Compare to Bomb or Fib*/
@@ -130,7 +127,7 @@ MOD_DOL(
 		sub	r5, r12, r11 ;	/*r5 = Bomb Probability*/
 		b	endProbabilityMethod;
 
-		/*NOTE: consider math w/ negative numbers for less code lines!*/
+		/*NOTE: consider using negative numbers for less code lines!*/
 		setTripleRedChance:
 		/*Triple Red Probability = [Max Chance - Bomb Probability]*/
 		/*Yay for the Probability Law of Compliments.*/
