@@ -1,0 +1,61 @@
+/* battle mod */
+PROVIDE(BtCupTrackerAddr = 0x8083ca78);
+PROVIDE(VsCupTrackerAddr = 0x807dfc14);
+PROVIDE(screenLoaderAddr = 0x8081f854);
+PROVIDE(WwScreenMemoryAddr = 0x805fd234);
+PROVIDE(BalloonScreenMemoryAddr = 0x805fda50);
+PROVIDE(CoinScreenMemoryAddr = 0x805fdae0);
+PROVIDE(BalloonTimerAddr = 0x8052e084);
+PROVIDE(CoinTimerAddr = 0x8052e0bc);
+PROVIDE(OnlineVoteCheckAddr = 0x80612f34);
+PROVIDE(OnlineVoteCheckVSAddr = 0x80612F18);
+PROVIDE(MemoryFunction = 0x805F1E54);
+PROVIDE(StageDecidedOnlineAddr = 0x8052b9ec);
+PROVIDE(MenuTimerAddr = 0x805bad14);
+
+PROVIDE(HitTeammateAddr = 0x8052BA24);
+PROVIDE(TeamColorAddr = 0x8054df6c);
+PROVIDE(LoadVSbikeAddr = 0x8062ecd0);
+PROVIDE(MenuManipulatorAddr = 0x805f0f68);
+PROVIDE(TeammatePointEarnedAddr = 0x805381c8);
+PROVIDE(TeammatePointLossAddr = 0x805381ec);
+PROVIDE(BalloonPtsCountAddr = 0x805358ec);
+PROVIDE(CoinCountAddr = 0x808848c0);
+PROVIDE(VisualLapCountAddr = 0x807e5548);
+
+PROVIDE(FroomMsgAddr = 0x8062B9AC);
+
+PROVIDE(NoMercyBalloonAddr = 0x80865c70);
+PROVIDE(NoMercyCoinAddr = 0x8086e950);
+
+PROVIDE(ItemLimitAddr = 0x807ae5e4);
+PROVIDE(ItemSlotAddr = 0x807ac198);
+PROVIDE(BombLimitAddr = 0x808A0AC8);
+PROVIDE(FibLimitAddr = 0x808A0D28);
+PROVIDE(NanaLimitAddr = 0x808A09CC);
+PROVIDE(RedReplacementLow = 0x01E0);
+
+
+/* PROVIDE (PlayerOnlineMatchesPlayedAddr = 0x80655d84); */
+PROVIDE(BrLimit1Addr = 0x80528e04);
+PROVIDE(BrLimit2Addr = 0x80528e0c);
+PROVIDE(BrLimit3Addr = 0x8061c3dc);
+PROVIDE(BrLimit4Addr = 0x8061c3e4);
+PROVIDE(BrLimit5Addr = 0x8083a79c);
+PROVIDE(BrLimit6Addr = 0x8083a7a4);
+PROVIDE(PlayerCountAddr = 0x80654aa4);
+PROVIDE(VoteNameFixAddr1 = 0x8064dd38);
+PROVIDE(VoteNameFixAddr2 = 0x8061cce0);
+
+PROVIDE(BalloonPtsGainOnlineAddr = 0x8053827c);
+/*PROVIDE(BalloonPtsGainOfflineAddr = 0x80533e00); */
+PROVIDE(BalloonPtsLossOnlineAddr = 0x805382a0);
+/*PROVIDE(BalloonPtsLossOfflineAddr = 0x80533e24); */
+/*PROVIDE(BalloonLossWhenFallingAddr = 0x80534170); */
+PROVIDE(TeamManipulatorAddr = 0x80659AB8);
+
+
+/*
+* 0x8052b9ec - course being played soon after selecting.
+* 8132ffc8 err
+*/
