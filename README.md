@@ -3,6 +3,8 @@ Adds new features and fixes to Mario Kart Wii's Battle Mode
 
 This project drew a lot of inspiration from CTGP, and I hope to create something very similar to battle mode, which is not paid much attention to. Simply put – it felt like battles were lacking a lot and has been “dead” compared to its earlier days recently. This project was meant to bring a bit more interest into the battling scene and to fix many problems that I, and many other battle veterans, felt battle had in MKW. 
 
+**NOTE: This repository contains an outdated, older version of the mod which will no longer be updated. The new version is located here: https://github.com/Namelesss1/ProjectBT **
+
 
 
 ## Current Features and Changes to Battle Mode
